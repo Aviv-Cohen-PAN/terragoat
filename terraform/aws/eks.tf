@@ -115,6 +115,8 @@ resource aws_subnet "eks_subnet2" {
   })
 }
 
+
+
 resource aws_eks_cluster "eks_cluster" {
   name     = local.eks_name.value
   role_arn = "${aws_iam_role.iam_for_eks.arn}"
@@ -147,3 +149,5 @@ output "endpoint" {
 output "kubeconfig-certificate-authority-data" {
   value = "${aws_eks_cluster.eks_cluster.certificate_authority.0.data}"
 }
+
+
